@@ -29,7 +29,7 @@ hostname-strict-https=false
 
 2. Client 생성
     - `test` 라는 이름의 Client 생성
-    - config 는 대충 아래처럼 만든다. -> auth-code 로 진행할 거니 confidential client(Client authentication Off) + standard flow check 해주면 된다.
+    - config 는 대충 아래처럼 만든다. -> auth-code 로 진행할 거니 confidential client(Client authentication On) + standard flow check 해주면 된다.
     - redirect uri 는 auth code 를 요청한 곳 + 해당 토큰을 return 할 곳을 검증하는 역할을 한다.
         - 예를 들어, auth code를 요청하면 code가 return 되고 해당 값 + username/password 로 POST 요청을 하면 Token 이 발급되는데 그게 code를 요청한 곳과 동일한지 체크가 이뤄져야 한다. 
         - 즉, auth code를 요청한 곳과 후에 토큰을 요청하는 곳이 같은지 validation 이 이뤄지며, 해당 redirect uri로 토큰이든 auth code든 리턴된다.
@@ -37,7 +37,7 @@ hostname-strict-https=false
         - Web origin은 그냥 테스트 할 용도니 다 열어줌   
         
 
-        <img width="500" alt="image" src="https://user-images.githubusercontent.com/84627144/230090511-2687d599-d05c-4669-a90d-c5a170bb8569.png">
+        <img width="682" alt="image" src="https://user-images.githubusercontent.com/84627144/230100575-2213eebd-5654-42b5-abc0-52a5b6db053e.png">
         <img width="500" alt="image" src="https://user-images.githubusercontent.com/84627144/230090277-4f873b6d-d9be-41dc-b36f-9af229561a87.png">
 
 3. Metadata URL
@@ -57,7 +57,7 @@ hostname-strict-https=false
         
         <img width="500" alt="image" src="https://user-images.githubusercontent.com/84627144/230094385-ac356868-c2b8-4332-8d26-61ff31459006.png">
 
-5. 회원가입
+5. 회원가입 / 로그인
     - 위에 보니 회원가입 버튼이 없는데 아래 설정을 안 해서 그럼
     - 여기 보이는 User Registeration 을 활성화 해야 회원가입 버튼이 나옴. 누르고 저장한 후, Code 요청 Url로 다시 해보자.
 
@@ -70,3 +70,12 @@ hostname-strict-https=false
     
         <img width="801" alt="image" src="https://user-images.githubusercontent.com/84627144/230096202-ba79b8bc-f182-481f-a25f-3be5b7870310.png">
 
+
+    - 아 로그인이 성공하면 키클록 콘솔에서도 해당 유저의 세션이 생성된 것을 확인할 수 있다.
+
+        <img width="800" alt="image" src="https://user-images.githubusercontent.com/84627144/230097441-a7c7181c-570f-43f5-8052-413ab759006e.png">
+
+
+6. Token 요청
+    - `token_endpoint` 에 요청하면 된다. (이것도 위의 metadata에서 확인 가능)
+    - 내 경우에는 http://localhost:8080/realms/seoinRealm/protocol/openid-connect/token 가 된다.
