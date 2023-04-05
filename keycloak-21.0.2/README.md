@@ -46,3 +46,27 @@ hostname-strict-https=false
     - 열어보면 대충 아래 같은 화면
     
         <img width="500" alt="image" src="https://user-images.githubusercontent.com/84627144/230092808-eabdcba6-49d7-48c4-873f-78237162f987.png">
+
+4. Code 요청
+    - http://localhost:8080/realms/seoinRealm/protocol/openid-connect/auth?client_id=test&response_type=code&scope=openid&redirect_uri=http://localhost:8083/callback 
+    - Metadata 에서 `authorization_endpoint` 에 요청하게 된다. 일단은 필수값만 더해서 브라우저상으로 요청한다.
+        - 필수값 : `client_id`, `response_type=code`, `scope=openid`, `redirect_uri`
+    
+    - 그럼 아래처럼 로그인 화면이 뜬다.
+    
+        
+        <img width="500" alt="image" src="https://user-images.githubusercontent.com/84627144/230094385-ac356868-c2b8-4332-8d26-61ff31459006.png">
+
+5. 회원가입
+    - 위에 보니 회원가입 버튼이 없는데 아래 설정을 안 해서 그럼
+    - 여기 보이는 User Registeration 을 활성화 해야 회원가입 버튼이 나옴. 누르고 저장한 후, Code 요청 Url로 다시 해보자.
+
+        <img width="500" alt="image" src="https://user-images.githubusercontent.com/84627144/230094955-d38cfe29-33db-45c0-a987-16c9d231a696.png">
+        <img width="500" alt="image" src="https://user-images.githubusercontent.com/84627144/230095508-8a64e9c0-1cad-4c07-a1a7-759d9b88772d.png">
+
+    - 회원가입 하면 당연히 에러 화면 뜸. 하지만 그게 정상임. 위에 URL을 보면 code가 생긴 걸 확인할 수 있음.
+    - `http://localhost:8083/callback?session_state=0eacfe58-0c62-42dc-826c-4a1364a23b5f&code=16c54de9-a6b6-4c26-817a-ca1179089ab3.0eacfe58-0c62-42dc-826c-4a1364a23b5f.a4ffb0ae-f11c-48de-a878-f4e2fe2cc085`
+    - 개발자 도구 네트워크 탭으로 보면 더 깔끔하게 보임
+    
+        <img width="801" alt="image" src="https://user-images.githubusercontent.com/84627144/230096202-ba79b8bc-f182-481f-a25f-3be5b7870310.png">
+
