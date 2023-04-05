@@ -24,6 +24,9 @@ hostname-strict-https=false
 
 ------
 
+<details>
+    <summary> Realm 생성부터 Code 요청 / Token 발급까지 . . .(Authorization Code Flow)</summary>
+
 1. Realm 생성
     - 내 Realm 이름은 `seoinRealm` 이다 ^ㅠ^
 
@@ -38,14 +41,14 @@ hostname-strict-https=false
         
 
         <img width="682" alt="image" src="https://user-images.githubusercontent.com/84627144/230100575-2213eebd-5654-42b5-abc0-52a5b6db053e.png">
-        <img width="500" alt="image" src="https://user-images.githubusercontent.com/84627144/230090277-4f873b6d-d9be-41dc-b36f-9af229561a87.png">
+        <img width="700" alt="image" src="https://user-images.githubusercontent.com/84627144/230090277-4f873b6d-d9be-41dc-b36f-9af229561a87.png">
 
 3. Metadata URL
     - OIDCProviderMetadataURL ${KC_ADDR}/realms/${KC_REALM}/.well-known/openid-configuration
     - 나 같은 경우에는 http://localhost:8080/realms/seoinRealm/.well-known/openid-configuration 에서 확인 가능함
     - 열어보면 대충 아래 같은 화면
     
-        <img width="500" alt="image" src="https://user-images.githubusercontent.com/84627144/230092808-eabdcba6-49d7-48c4-873f-78237162f987.png">
+        <img width="1000" alt="image" src="https://user-images.githubusercontent.com/84627144/230092808-eabdcba6-49d7-48c4-873f-78237162f987.png">
 
 4. Code 요청
     - http://localhost:8080/realms/seoinRealm/protocol/openid-connect/auth?client_id=test&response_type=code&scope=openid&redirect_uri=http://localhost:8083/callback 
@@ -79,3 +82,16 @@ hostname-strict-https=false
 6. Token 요청
     - `token_endpoint` 에 요청하면 된다. (이것도 위의 metadata에서 확인 가능)
     - 내 경우에는 http://localhost:8080/realms/seoinRealm/protocol/openid-connect/token 가 된다.
+    - 매개변수로 `grant_type`, `client_id`, `client_secret`, `code`, `redirect_uri` 가 있다.
+    - client secret 은 여기서 확인함
+    
+        <img width="1326" alt="image" src="https://user-images.githubusercontent.com/84627144/230101389-2e270934-f282-4335-a34b-c58be0404ac0.png">
+
+    
+    - 이제 토큰 요청은 포스트맨에서도 테스트 할 수 있음 (포스트맨 테스트 시 요청 하는 방법은 [여기!!!](https://www.postman.com/credshare/workspace/keycloak-sso/request/14351307-d7e4bff4-a72b-46c6-964f-d0ad6c2b3703) 참고
+    - access token, id token, scope 등등 데이터가 나오는 걸 확인할 수 있다.
+    
+        <img width="842" alt="image" src="https://user-images.githubusercontent.com/84627144/230105116-a0e7a1a0-2530-4aa5-9b35-73e6586b8c97.png">
+
+
+</details>
