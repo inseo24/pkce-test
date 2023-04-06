@@ -113,6 +113,25 @@ hostname-strict-https=false
         <img width="658" alt="image" src="https://user-images.githubusercontent.com/84627144/230393531-d6a1e3fd-add9-4f97-b1be-37ac82d7d3b9.png">
         <img width="1286" alt="image" src="https://user-images.githubusercontent.com/84627144/230393650-f138936e-f8ba-4549-a8b5-108efe1597ba.png">
 
-2. 
-       
+2. code challenge 값이 필요함
+    - 대충 [generator](https://tonyxu-io.github.io/pkce-generator/) 를 써보자
+    
+        <img width="807" alt="image" src="https://user-images.githubusercontent.com/84627144/230394390-a82139aa-6696-45b0-a2ff-08eed83b4b29.png">
+
+3. Code Request
+    - 로그인을 해보자.
+        - `http://localhost:8080/realms/seoinRealm/protocol/openid-connect/auth?client_id=test&response_type=code&scope=openid&redirect_uri=http://localhost:8083/callback&code_challenge=HVoKJYs8JruAxs7hKcG4oLpJXCP-z1jJQtXpQte6GyA&code_challenge_method=S256`
+        - param 으로 `code_challenge_method=S256`, `code_challenge=01jGMnbTorlfVp5dusMZtXxT543bcf9o5fmMh4W-hHM` 값을 추가해야 한다.
+    - 브라우저에서 로그인 요청 후 아래와 같이 URL 변경된 걸 보면 code가 동일하게 리턴된 걸 확인할 수 있다.
+        - `http://localhost:8083/callback?session_state=84911217-88f0-4263-9a1a-8a12d1a574fa&code=84c2f1dc-36e4-4644-a183-4468e4714c7c.84911217-88f0-4263-9a1a-8a12d1a574fa.a4ffb0ae-f11c-48de-a878-f4e2fe2cc085`
+    
+    
+
+4. Token Request
+    - Postman 으로 토큰을 받아보자.    
+    - param 으로 client_secret 은 더이상 보낼 필요가 없고, code_verifier 를 보내줘야 한다.    
+        
+        <img width="844" alt="image" src="https://user-images.githubusercontent.com/84627144/230398854-3bdb98ca-67d4-4d97-ac08-5f815824bc6d.png">
+
+    
 </details>
