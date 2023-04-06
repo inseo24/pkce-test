@@ -95,7 +95,13 @@ hostname-strict-https=false
     
         <img width="842" alt="image" src="https://user-images.githubusercontent.com/84627144/230105116-a0e7a1a0-2530-4aa5-9b35-73e6586b8c97.png">
 
+7. 참고
+    - 위에 토큰 요청할 때 Header 에 Content Type 설정 필요함
+    - application/x-www-form-urlencoded
+    
+        <img width="678" alt="image" src="https://user-images.githubusercontent.com/84627144/230401848-7aefee56-3b4f-48d2-a1d2-8b8bd185aa9a.png">
 
+    
 </details>
 
 ------ 
