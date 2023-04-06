@@ -114,9 +114,10 @@ hostname-strict-https=false
         <img width="1286" alt="image" src="https://user-images.githubusercontent.com/84627144/230393650-f138936e-f8ba-4549-a8b5-108efe1597ba.png">
 
 2. code challenge 값이 필요함
-    - 대충 [generator](https://tonyxu-io.github.io/pkce-generator/) 를 써보자
-    
-        <img width="807" alt="image" src="https://user-images.githubusercontent.com/84627144/230394390-a82139aa-6696-45b0-a2ff-08eed83b4b29.png">
+    - 테스트 편리성을 위해 
+        - code_challenge로 `01jGMnbTorlfVp5dusMZtXxT543bcf9o5fmMh4W-hHM` 
+        - verifier 로 `EAp91aanXdoMcoOc2Il55H3UDDIV909k9olEEcl6L24J6_9X` 값을 써보자. 대충 블로그에서 긁어온 것임
+
 
 3. Code Request
     - 로그인을 해보자.
