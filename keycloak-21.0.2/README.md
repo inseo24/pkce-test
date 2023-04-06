@@ -105,4 +105,14 @@ hostname-strict-https=false
 <details>
     <summary> PKCE로 해보자 </summary>
     
+1. Client Type 변경
+    
+    - public 으로 변경해줘야 함
+    - Client 안에 Advanced Tab 에 가서 Proof Key for Code Exchange Code Challenge Method 도 S256으로 할 걸 세팅 필요
+    
+        <img width="658" alt="image" src="https://user-images.githubusercontent.com/84627144/230393531-d6a1e3fd-add9-4f97-b1be-37ac82d7d3b9.png">
+        <img width="1286" alt="image" src="https://user-images.githubusercontent.com/84627144/230393650-f138936e-f8ba-4549-a8b5-108efe1597ba.png">
+
+2. 
+       
 </details>
