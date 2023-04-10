@@ -142,3 +142,58 @@ hostname-strict-https=false
 
     
 </details>
+
+-------------
+
+
+### Consent(권한 동의) & Default Scope
+
+<details>
+    <summary> Consent & Scope </summary>
+
+- 보통 SSO 하다 보면, 로그인 후 해당 서비스로 돌아가기 전에 이름, 이메일 등 서비스로 넘겨줄 개인 정보 리스트와 동의하겠냐는 문구가 뜨는데, 이걸 세팅해보자. 
+    - Keycloak 에서는 Consent라고 되어 있다. 아래 캡쳐처럼 Client 별로 세팅이 가능하다.
+    
+        <img width="901" alt="image" src="https://user-images.githubusercontent.com/84627144/230911312-004b2cbd-6141-4f0d-89a6-effd09a0dfcc.png">
+
+    - 위와 같이 세팅한 후 다시 로그인을 해보면 아래처럼 개인정보 동의 화면이 출력된다. 
+        
+        - 여기서 동의하지 않을 경우 access_denied 가 리턴된다.
+
+        <img width="657" alt="image" src="https://user-images.githubusercontent.com/84627144/230911652-489ab14d-02f1-4a52-8735-7e9ceb6ba1be.png">       
+
+    - 화면에 보이는 User roles, Email address, User profile는 Client Scope 에 Default로 세팅된 값들이다.
+        
+        <img width="953" alt="image" src="https://user-images.githubusercontent.com/84627144/230911984-ca8d6d2c-220c-4fbb-804c-c2505ba20a8f.png">
+        
+    - 위 화면에 보이는 Optional 값 중에 Phone 을 Default로 바꾸면 아래처럼 추가 된다.
+    
+        <img width="605" alt="image" src="https://user-images.githubusercontent.com/84627144/230912387-446305c9-0a2d-48cd-8188-f369ee5ca340.png">
+
+
+    - 당연히 동의를 눌러야 Code가 발급된다. 
+    
+- Scope를 요청할 때 scope=openid 로 param을 넘겨주고 있는데 당연히 요구하는 것만 넣을 수 있다. 
+    - `http://localhost:8080/realms/seoinRealm/protocol/openid-connect/auth?client_id=test&response_type=code&scope=openid nickname&redirect_uri=http://localhost:8083/callback&code_challenge=HVoKJYs8JruAxs7hKcG4oLpJXCP-z1jJQtXpQte6GyA&code_challenge_method=S256`
+    - 위와 같이 scope=openid nickname 을 해보자.
+    - 미리 좀 세팅이 필요한데, 아래처럼 Client Scope Tab에서 하나 생성해주자.
+       
+       <img width="850" alt="image" src="https://user-images.githubusercontent.com/84627144/230915827-facd1b81-3700-46d5-9f0d-7804541438fa.png">
+    
+    - 생성된 Client Scope 안에서 Mappers 쪽을 들어가면 predefined 된 mappers 중에 nickname 을 써주자. 그럼 user_attribute 에 nickname으로 설정된 값과 알아서 매핑된다.
+    - 그리고 해당 Client 에 가서 Client Scope 에서 추가해주자.
+     
+        <img width="1059" alt="image" src="https://user-images.githubusercontent.com/84627144/230916305-1d1d4e01-30f4-4f52-96fc-d48b099d76b5.png">
+
+    - 물론 User의 Attribute 에 이렇게 값이 세팅되어 있어야 함
+        
+        <img width="1385" alt="image" src="https://user-images.githubusercontent.com/84627144/230916466-75ede9a0-1bf1-46e2-9bcf-6f306bfa231c.png">
+    
+    - 세팅 다 끝내고 위의 URL로 코드 발급 후 토큰을 받아보면 아래처럼 nickname이 보인다.
+    
+        <img width="403" alt="image" src="https://user-images.githubusercontent.com/84627144/230916819-d690b081-48e4-4c6f-9379-8a3e23efc11e.png">
+
+    - 아직까진 idToken이랑 access token이랑 분리가 안 되어 있는 상태라 사실상 두 토큰 모두 돌려보면 nickname이 보인다. (원래는 idToken 에 담겨야함) 
+    - 그건 다음에 해보는걸로 ! 
+
+</details>
