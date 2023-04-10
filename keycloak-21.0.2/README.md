@@ -195,5 +195,7 @@ hostname-strict-https=false
 
     - 아직까진 idToken이랑 access token이랑 분리가 안 되어 있는 상태라 사실상 두 토큰 모두 돌려보면 nickname이 보인다. (원래는 idToken 에 담겨야함) 
     - 그건 다음에 해보는걸로 ! 
+    
+    - 아, 깜빡하고 안 썼는데 당연히 scope=openid 를 안 쓰면 id token이 나오지 않는다. 
 
 </details>
