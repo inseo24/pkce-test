@@ -199,3 +199,22 @@ hostname-strict-https=false
     - 아, 깜빡하고 안 썼는데 당연히 scope=openid 를 안 쓰면 id token이 나오지 않는다. 
 
 </details>
+
+
+--------
+
+<details>
+
+<summary>그 외 이모저모</summary>
+
+1. Client PKCE method setting
+    - pkce method 로 보통 S256를 많이 쓰는데, 처음 구글링 했을 때 이거 클라이언트별로 세팅 하는게 없는 줄 알았다. 
+    - 구글링을 한 20분 했는데 잘 안 나오고 뭐지 했는데 Client Attribute로 세팅해줘야 했음. <- 니콜이 찾아줌(어캐 찾음? 내일 물어봐야겠다)
+    - chatGPT에 한 번 물어봤는데, 영어로 질문하니 3번째에 원하는 답변을 줌. 
+    - 아래처럼 ClientRepresentation 에 put 해주면 된다.
+
+        ```java
+        client.getAttributes().put("pkce.code.challenge.method", "S256");
+        ```
+
+</details>
