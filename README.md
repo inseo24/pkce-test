@@ -6,6 +6,11 @@
 - [키클록에서 PKCE를 써보자](https://github.com/inseo24/pkce-test/blob/main/keycloak-21.0.2/README.md#authorization-code-flow-with-pkce--keyclaok)
 - [키클록에서 해당 클라이언트에 원하는 개인정보만 받게 세팅해보자 + Client Scope 추가 방법](https://github.com/inseo24/pkce-test/blob/main/keycloak-21.0.2/README.md#consent%EA%B6%8C%ED%95%9C-%EB%8F%99%EC%9D%98--default-scope)
 
+- 읽어볼 링크
+  - [auth0에서 작성한 PKCE 가이드](https://auth0.com/docs/get-started/authentication-and-authorization-flow/call-your-api-using-the-authorization-code-flow-with-pkce)
+  - [auth0에서 작성한 auth-code flow 가이드](https://auth0.com/docs/get-started/authentication-and-authorization-flow/call-your-api-using-the-authorization-code-flow)
+
+
 <details>
   <summary>기타 학습</summary>
   
@@ -17,7 +22,3 @@
   - 일반적으로 난수와 함께 시간 정보나 사용자 세션 같은 추가 정보를 사용해 생성
   
 </details>
-
-- 읽어볼 링크
-  - [auth0에서 작성한 PKCE 가이드](https://auth0.com/docs/get-started/authentication-and-authorization-flow/call-your-api-using-the-authorization-code-flow-with-pkce)
-  - [auth0에서 작성한 auth-code flow 가이드](https://auth0.com/docs/get-started/authentication-and-authorization-flow/call-your-api-using-the-authorization-code-flow)
