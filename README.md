@@ -17,3 +17,7 @@
   - 일반적으로 난수와 함께 시간 정보나 사용자 세션 같은 추가 정보를 사용해 생성
   
 </details>
+
+- 읽어볼 링크
+  - [auth0에서 작성한 PKCE 가이드](https://auth0.com/docs/get-started/authentication-and-authorization-flow/call-your-api-using-the-authorization-code-flow-with-pkce)
+  - [auth0에서 작성한 auth-code flow 가이드](https://auth0.com/docs/get-started/authentication-and-authorization-flow/call-your-api-using-the-authorization-code-flow)
