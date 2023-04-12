@@ -216,5 +216,8 @@ hostname-strict-https=false
         ```java
         client.getAttributes().put("pkce.code.challenge.method", "S256");
         ```
+        <img width="640" alt="image" src="https://user-images.githubusercontent.com/84627144/231485816-905e54c5-5eed-418e-a838-8677e55960dc.png">
 
+
+    
 </details>
