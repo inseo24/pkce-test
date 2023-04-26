@@ -181,6 +181,7 @@ hostname-strict-https=false
        <img width="850" alt="image" src="https://user-images.githubusercontent.com/84627144/230915827-facd1b81-3700-46d5-9f0d-7804541438fa.png">
     
     - 생성된 Client Scope 안에서 Mappers 쪽을 들어가면 predefined 된 mappers 중에 nickname 을 써주자. 그럼 user_attribute 에 nickname으로 설정된 값과 알아서 매핑된다.
+        - predefined mapper 가 없으면 직접 생성해서 등록해주면 ㅇㅇ.
     - 그리고 해당 Client 에 가서 Client Scope 에서 추가해주자.
      
         <img width="1059" alt="image" src="https://user-images.githubusercontent.com/84627144/230916305-1d1d4e01-30f4-4f52-96fc-d48b099d76b5.png">
