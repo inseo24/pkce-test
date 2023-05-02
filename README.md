@@ -5,6 +5,7 @@
 - [키클록 요청 시 참고하기 좋은 자료 - 포스트맨으로 요청할 때 필요한 거 다 모여 있음](https://www.postman.com/credshare/workspace/keycloak-sso/request/14351307-d7e4bff4-a72b-46c6-964f-d0ad6c2b3703)
 - [키클록에서 PKCE를 써보자](https://github.com/inseo24/pkce-test/blob/main/keycloak-21.0.2/README.md#authorization-code-flow-with-pkce--keyclaok)
 - [키클록에서 해당 클라이언트에 원하는 개인정보만 받게 세팅해보자 + Client Scope 추가 방법](https://github.com/inseo24/pkce-test/blob/main/keycloak-21.0.2/README.md#consent%EA%B6%8C%ED%95%9C-%EB%8F%99%EC%9D%98--default-scope)
+- [Regular SSO, 하나의 클라이언트에서 로그인 시 같은 realm 안의 다른 클라이언트에도 유저의 세션이 공유된다](https://github.com/inseo24/pkce-test/tree/main/keycloak-21.0.2#regular-sso)
 
 - 읽어볼 링크
   - [auth0에서 작성한 PKCE 가이드](https://auth0.com/docs/get-started/authentication-and-authorization-flow/call-your-api-using-the-authorization-code-flow-with-pkce)
