@@ -204,9 +204,11 @@ hostname-strict-https=false
 
 --------
 
+### Regular SSO 
+
 <details>
 
-<summary>하나의 Realm 안에서 Client 간 유저 세션 공유(Regular SSO)</summary>
+<summary>하나의 Realm 안에서 Client 간 유저 세션이 공유된다(Regular SSO)</summary>
 
 - 한 유저가 클라이언트 1에서 로그인을 하면 다른 클라이언트 2에서도 Auth-Code 요청 시 다시 로그인 없이 이미 생성된 세션으로 code가 발급된다. 
 - 위 동작은 아마도 브라우저 별로 판단될 거 같다. 사용자가 다른 브라우저에서 로그인하거나 세션을 삭제하면 다시 로그인해야 한다고 생각했음 <- 시크릿 모드로 브라우저를 키니까 다시 로그인 페이지가 등장함 맞는 거 같다.
